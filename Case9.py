@@ -1,6 +1,6 @@
 """
 Case-study #9 Автозаправочная станция
-Разработчики: Shmatov D. 70%, Bayanova A. 80%
+Разработчики: Shmatov D. 90%, Bayanova A. 60%
 """
 
 from random import *
@@ -65,7 +65,7 @@ with open('input.txt') as n:
                 if count1 < 3:
                     count1 += 1
                     num = 1
-                    qwer.update({a: "В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
+                    qwer.update({a: "В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
                                                                                          vremya(int(b)),
                                                                                                   num)})
                     qwer.update({t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(t, a, b, c,vremya(int(b)), num)})
@@ -79,7 +79,7 @@ with open('input.txt') as n:
                 if count3 < 5:
                     count3 += 1
                     num = 3
-                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
+                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
                                                                                                   vremya(int(b)),
                                                                                                   num)})
                     qwer.update({
@@ -94,7 +94,7 @@ with open('input.txt') as n:
                 if count3 < 5:
                     count3 += 1
                     num = 3
-                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
+                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
                                                                                                   vremya(int(b)),
                                                                                                   num)})
                     qwer.update({
@@ -106,49 +106,48 @@ with open('input.txt') as n:
                                                                                                             vremya(
                                                                                                                 int(b)))})
             elif c == "АИ-92":
-                if count2 > count3 and count3 < 5:
-                    count3 += 1
-                    num = 3
-                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
-                                                                                                  vremya(int(b)),
-                                                                                                  num)})
-                    qwer.update({
-                                    t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
-                                        t, a, b, c, vremya(int(b)), num)})
-                elif count3 > count2 and count2 < 4:
-                    count2 += 1
-                    num = 2
-                    qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
-                                                                                                  vremya(int(b)),
-                                                                                                  num)})
-                    qwer.update({
-                                    t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
-                                        t, a, b, c, vremya(int(b)), num)})
-                elif count2 == count3:
-                    qw = randint(2, 3)
-                    if qw == 2 and count2 < 4:
-                        count2 += 1
-                        num = 2
-                        qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
-                                                                                                      vremya(int(b)),
-                                                                                                      num)})
-                        qwer.update({
-                                        t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
-                                            t, a, b, c, vremya(int(b)), num)})
-                    elif qw == 3 and count3 < 5:
+                if count2 > count3:
+                    if count3 < 5:
                         count3 += 1
                         num = 3
-                        qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}".format(a, a, b, c,
+                        qwer.update({a: "В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
                                                                                                       vremya(int(b)),
                                                                                                       num)})
                         qwer.update({
                                         t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
                                             t, a, b, c, vremya(int(b)), num)})
-                    else:
-                        qwer.update({a:"В {} новый клиент: {} {} {} {} не смог заправить автомобиль и покинул АЗС.".format(a, a, b, c,
-                                                                                                  vremya(int(b)),
-                                                                                                  )})
-
+                elif count3 > count2:
+                    if count2 < 4:
+                        count2 += 1
+                        num = 2
+                        qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
+                                                                                                      vremya(int(b)),
+                                                                                                      num)})
+                        qwer.update({
+                                        t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
+                                            t, a, b, c, vremya(int(b)), num)})
+                elif count2 == count3:
+                    qw = randint(2, 3)
+                    if qw == 2:
+                        if count2 < 4:
+                            count2 += 1
+                            num = 2
+                            qwer.update({a: "В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
+                                                                                                          vremya(int(b)),
+                                                                                                          num)})
+                            qwer.update({
+                                            t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
+                                                t, a, b, c, vremya(int(b)), num)})
+                    elif qw == 3:
+                        if count3 < 5:
+                            count3 += 1
+                            num = 3
+                            qwer.update({a:"В {} новый клиент: {} {} {} {} встал в очередь к автомату № {}.".format(a, a, b, c,
+                                                                                                          vremya(int(b)),
+                                                                                                          num)})
+                            qwer.update({
+                                            t: "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул автомат № {}".format(
+                                                t, a, b, c, vremya(int(b)), num)})
 
 
             for i in range(0, 24):
@@ -156,33 +155,22 @@ with open('input.txt') as n:
                     ht = "0" + str(i)
                 else:
                     ht = str(i)
-                for j in range(0,60):
+                for j in range(0, 60):
                     if j < 10:
                         mt = "0" + str(j)
                     else:
                         mt = str(j)
                     tt = ht + ":" + mt
                     if tt in qwer:
-                        if qwer.get(tt) == "В  {}  клиент  {} {} {} {}  заправил свой автомобиль и покинул" \
-                                           " автомат № {}".format(t, a, b, c,vremya(int(b)),num):
-                            print(qwer.get(tt)[-1])
-                            if qwer.get(tt)[-1] == "1":
-                                count1 -= 1
-                            elif qwer.get(tt)[-1] == "2":
-                                count2 -= 1
-                            elif qwer.get(tt)[-1] == "3":
-                                count3 -= 1
+                        if qwer.get(tt)[-1] == "1":
+                            count1 -= 1
+                        elif qwer.get(tt)[-1] == "2":
+                            count2 -= 1
+                        elif qwer.get(tt)[-1] == "3":
+                            count3 -= 1
 
-                        print(qwer.get(tt))
-
-                        status(count1,count2,count3)
-
-
-
-
-
-
-
+                        print(qwer.pop(tt))
+                        status(count1, count2, count3)
 
 
 
