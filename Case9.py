@@ -15,6 +15,16 @@ def vremya(x):
         vr = ceil(x/t)
     return vr
 
+def time(y,x):
+    # y - время, к которому нужно прибавить (формата 00:00)
+    # x - минуты которые нужно прибвить
+    z = y[2:] + x
+    while z > 59 :
+        y += 1
+        z -= 60
+    y[:2] = z
+    return str(y,':',x)
+
 def och(x):
     count1 = 0
     count2 = 0
