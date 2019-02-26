@@ -128,7 +128,7 @@ with open('input.txt') as n:
                                                                                                   vremya(int(b)),
                                                                                                   ))
             status(count1,count2,count3)
-            n.writelines("{} ")
+
 
 
 
